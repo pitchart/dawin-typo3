@@ -1,0 +1,14 @@
+<h1>OOP</h1>
+<h2>Utilisation d'interfaces et injection de dépendances</h2>
+<pre><code data-trim contenteditable class="php">
+/** 
+ * @var \Pitchart\Blog\Service\ExampleInterface
+ * @inject
+ */
+protected $example;
+
+public function injectExample(\Pitchart\Blog\Service\ExampleInterface $example) {
+	$this->example = $example;
+	// Plus de logique ici
+}
+</code></pre>

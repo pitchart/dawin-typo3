@@ -1,0 +1,9 @@
+{
+  "generator-reveal": {
+    "presentationTitle": "Proxy Pattern(s) en PHP",
+    "packageVersion": "1.0.0",
+    "revealTheme": "black",
+    "useSass": false,
+    "deployToGithubPages": false
+  }
+}

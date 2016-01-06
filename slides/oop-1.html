@@ -1,0 +1,18 @@
+<h1>OOP</h1>
+<h2>Gestionnaire d'objets</h2>
+<pre><code data-trim contenteditable class="php hljs">
+/**
+ * @var \TYPO3\CMS\Extbase\Object\ObjectManager
+ */
+protected $objectManager;
+/**
+ * Do something
+ */
+public function doSomethingAction() {
+
+    $example = new \Pitchart\Blog\Domain\Model\Post($arg1, $arg2);
+    // remplacé par :
+    $example = $this->objectManager->get('Pitchart\Blog\Domain\Model\Post', $arg1, $arg2);
+
+}
+</code></pre>

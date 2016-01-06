@@ -1,0 +1,32 @@
+<section>
+<h2>Persistance des données</h2>
+<p>Définition des tables : ext_tables.sql</p>
+<pre><code class="sql hljs" contenteditable data-trim>
+CREATE TABLE tx_blog_domain_model_post (
+    uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
+    pid int(11) DEFAULT '0' NOT NULL,
+    # ...
+    title varchar(255) NOT NULL,
+    content text NOT NULL,
+    comments int(11) NOT NULL,
+    # ...
+    PRIMARY KEY (uid),
+    KEY parent (pid)
+);
+</code></pre>
+<p>Relation Model / table par convention de nommage</p>
+</section>
+<section>
+<h2>Configuration Backend</h2>
+<div class="fragment">
+<h3>Table Configuration Array</h3>
+<p><a href="https://docs.typo3.org/typo3cms/TCAReference/">https://docs.typo3.org/typo3cms/TCAReference/</a></p>
+<pre><code class="hljs php" contenteditable data-trim>
+$TCA['tx_blog_domain_model_post'] = array(
+        ...
+);
+</code></pre>
+<p class="fragment">Mapping des données basé sur les annotations du modèle et la structure TCA</p>
+</div>
+</section>
+<section data-background="resources/img/extbase-extension-builder.png"></section>

@@ -1,0 +1,42 @@
+<section>
+	<h2>Domain Driven Design</h2>
+	<p>Models / Repositories / Factories / Validators ...</p>
+	<p>
+		Relations entre objets du domaine : <br>
+		\TYPO3\CMS\Extbase\Persistence\ObjectStorage
+	</p>
+	<p></p>
+	<pre><code class="hljs php" contenteditable data-trim>
+class Post {
+    /**
+     * @var ObjectStorage&lt;Comment&gt;
+     * @lazy
+     * @cascade remove
+     */
+    protected $comments;
+}
+	</code></pre>
+</section>
+<section>
+<h3>Validation</h3>
+<pre><code contenteditable data-trim class="hljs php">
+namespace TYPO3\CMS\Extbase\Validation\Validator;
+
+interface ValidatorInterface {
+    public function getErrors();
+    public function isValid($value); 
+    public function setOptions(array $validationOptions);
+}
+
+//...
+
+class Post {
+    /**
+     * @var string
+     * @validate StringLength(maximum=80)
+     * @validate \Pitchart\Blog\Domain\Validator\TitleValidator
+     */
+    protected $title;
+}
+</code></pre>
+</section>

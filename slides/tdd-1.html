@@ -1,0 +1,14 @@
+<section>
+<h1>Test Driven Development</h1>
+<p><span class="t3-color">EXT: phpunit</span></p>
+<ul>
+	<li>Intégration complète dans TYPO3</li>
+	<li><span class="t3-color">extbase</span> : classes facilitant les tests unitaires des modèles / controllers ...</li>
+	<li>Exécution automatisée dans le planificateur de tâches</li>
+	<li>Exécution en mode cli</li>
+</ul>
+<pre><code class="hljs bash" contenteditable data-trim>
+php typo3/cli_dispatch.phpsh phpunit -c typo3/sysext/core/Build/UnitTests.xml
+php typo3/cli_dispatch.phpsh phpunit typo3conf/ext/blog/Tests/Unit/
+</code></pre>
+</section>
