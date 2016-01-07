@@ -1,4 +1,4 @@
-# Développement d'extension TYPO3-CMS
+# Développement d'extensions pour TYPO3-CMS
 > Supports de cours sur les Systèmes de Gestion de Contenu CMS - IUT Bordeaux Info - LP DAWIN
 
 ## Installation
