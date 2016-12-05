@@ -1,0 +1,43 @@
+<section>
+	<h1>Les extensions dans TYPO3</h1>
+	<blockquote>
+		Spend one hour and it works one place - spend two hours and it works in a hundred places
+	</blockquote>
+</section>
+<section>
+	<img src="resources/img/typo3-today-extensions.png"  alt="" longdesc="https://typo3.org/extensions/what-are-extensions/" width="100%" />
+</section>
+<section>
+	<ul class="pros-cons">
+		<li class="pros-line">
+			<span class="t3-color">Rapidité de partage :</span> upload / download
+		</li>
+		<li class="pros-line">
+			<span class="t3-color">Rapidité de développement :</span> extension_builder (kickstart) / modularité / point d'entrée limité
+		</li>
+		<li class="pros-line">
+			<span class="t3-color">Facilité de documentation :</span>
+			intégrée aux extensions / 
+			<a href="https://docs.typo3.org/typo3cms/extensions/sphinx/fr-fr/WritersManual/SphinxRest/Index.html" target="_blank">reStructuredText</a> (pdf, html ...)
+		</li>
+		<li class="pros-line">
+			<span class="t3-color">Séparation des responsabilités :</span>
+			chaque développeur est responsable du code au sein de ses extensions
+		</li>
+		<li class="pros-line">
+			<span class="t3-color">Point de gestion unique : </span>
+			gestionnaire d'extensions (extension_manager)
+		</li>
+	</ul>
+</section>
+<section>
+	<h1>Clés d'extensions :</h1>
+	<p>dossier + namespaces</p>
+	<pre><code contenteditable data-trim class="hljs php">
+preg_match('/[a-z0-9_]{3,30}/', $extensionKey)
+&& !preg_match('/^(tx|user_|pages|tt_|sys_|ts_language_|csh)/', $extensionKey)
+&& !preg_match('/(tx|user_|pages|tt_|sys_|ts_language_|csh)$/', $extensionKey)
+&&!preg_match('/^[0-9_]+/', $extensionKey)
+&&!preg_match('/_[0-9]/', $extensionKey)
+	</code></pre>
+</section>

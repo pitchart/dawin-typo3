@@ -1,0 +1,37 @@
+<section>
+<h2>Entrepots</h2>
+<pre><code class="php hljs" contenteditable data-trim>
+class BlogRepository extends \TYPO3\Extbase\Persistence\Repository {
+    public function add($object) {}
+    public function remove($object) {}
+    public function removeAll() {}
+    public function replace($existingObject, $newObject) {}
+    public function update($modifiedObject) {}
+    public function findAll() {}
+    public function countAll() {}
+
+    // findByProperty($value), findOneByProperty($value)
+    // countByProperty($value)
+}
+</code></pre>
+</section>
+<section>
+<h2>Spécification des requêtes</h2>
+<pre><code class="php hljs" contenteditable data-trim>
+class \TYPO3\Extbase\Persistence\Query {
+    public function equals($propertyName, $operand, $caseSensitive = TRUE) {}
+    public function in($propertyName, $operand) {}
+    public function contains($propertyName, $operand) {}
+    public function like($propertyName, $operand) {}
+    public function lessThan($propertyName, $operand) {}
+    public function lessThanOrEqual($propertyName, $operand) {}
+    public function greaterThan($propertyName, $operand) {}
+    public function greaterThanOrEqual($propertyName, $operand) {}
+
+    public function logicalAnd($constraint1, $constraint2) {}
+    public function logicalOr($constraint1, $constraint2) {}
+    public function logicalNot($constraint) {}
+    public function setOrderings(array $orderings) {}
+}
+</code></pre>
+</section>

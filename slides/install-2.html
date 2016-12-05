@@ -1,0 +1,15 @@
+<h2>Depuis TYPO3 7.4</h2>
+<p>composer + <span class="t3-color">typo3_console</span></p>
+<pre><code data-trim contenteditable class="javascript hljs">
+// composer.json
+{
+    "require": {
+        "typo3/cms": "^7.4",
+        "helhum/typo3-console": "^1.2"
+    }
+}
+</code></pre>
+<pre><code data-trim contenteditable class="sh hljs">
+$ composer install
+$ ./typo3cms install:setup
+</code></pre>

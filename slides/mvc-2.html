@@ -1,0 +1,19 @@
+<section>
+<p>Système de namespace pour les variables _GET</p>
+<pre><code>http://site.fr/blog/?tx_blog_pi1[controller]=post&tx_blog_pi1[action]=show&tx_blog_pi1[post]=1</code></pre>
+<p> => argument de requête propagé par le controller principal vers le(s) controller(s) d'extension.</p>
+</section>
+<section>
+	<p>Chargement automatique de l'objet dans l'action du controller</p>
+<pre><code data-trim contenteditable class="php">
+class PostController extends \TYPO3\CMS\Extbase\MVC\Controller\ActionController {
+    /**
+     * @var \Pitchart\Blog\Domain\Model\PostInterface
+     */
+    public function showAction(\Pitchart\Blog\Domain\Model\PostInterface $post) {
+        $this->view->assign('post', $post);
+    }
+}
+</code></pre>
+<p class="fragment">Utilisation des annotation et de la configuration du gestionnaire d'objet</p>
+</section>

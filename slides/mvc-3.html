@@ -1,0 +1,44 @@
+<section>
+<h2>Fluid : moteur de templates</h2>
+<p><a href="https://fluidtypo3.org/viewhelpers.html">fluidtypo3.org</a></p>
+<div class="gridWrap">
+	<div class="grid grid--40">
+		<img src="resources/img/fluid-rendering.png" alt="">
+	</div>
+	<div class="grid grid--60">
+<pre><code class="hljs html" contenteditable data-trim>
+<!-- Accès aux données -->
+{post.author.emailAddress}
+<!-- $post-&gt;getAuthor()-&gt;getAddressEmail() -->
+
+<!-- Inclusions -->
+&lt;f:render partial="PartialName" arguments="{...}" /&gt;
+&lt;f:render section="SectionName" arguments="{...}" /&gt;
+
+<!-- Layouts -->
+&lt;f:layout name="LayoutName" /&gt;
+</code></pre>
+	</div>
+</div>
+</section>
+<section>
+<h3>ViewHelpers</h3>
+<p>Natifs (f:)</p>
+<pre><code class="hljs html" contenteditable data-trim>
+<!-- Fonction -->
+&lt;f:format.date format="d-m-Y" date="{post.date}" /&gt;
+
+<!-- Contenu inclus -->
+&lt;f:format.date format="d-m-Y"&gt;{post.date}&lt;/f:format.date&gt;
+
+<!-- Inline -->
+{f:format.date(date: post.date, format: 'd-m-Y')}
+
+<!-- Chaînage / Modifieur -->
+{post.date -&gt; f:format.date(format: 'd-m-Y')}
+</code></pre>
+<p>Ajout par extension / Disponible partout</p>
+<pre><code class="hljs html" contenteditable data-trim>
+{namespace bl=Pitchart\Blog\ViewHelpers}
+</code></pre>
+</section>
